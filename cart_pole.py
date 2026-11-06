@@ -13,8 +13,8 @@ def render():
 for _ in range(5):
     action = env.action_space.sample()  # Take a random action
     state, reward, terminated, truncated, info = env.step(action)  # Step the environment
-    if terminated or truncated:
-        render()  
+    render()
+    if terminated or truncated:  
         state, info = env.reset()  # Reset the environment if done
           
 env.close() 
